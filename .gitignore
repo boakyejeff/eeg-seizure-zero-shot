@@ -1,0 +1,25 @@
+# Data (large EDF files + user downloads)
+data/raw/
+!data/raw/.gitkeep
+
+# Results artifacts (regenerable)
+results/*.json
+results/*.csv
+results/*.png
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/

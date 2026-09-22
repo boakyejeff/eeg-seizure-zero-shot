@@ -1,0 +1,14 @@
+patient chb01
+  chb01_03.edf: 1 seizure(s), loading...
+Traceback (most recent call last):
+  File "/home/hatch/workspace/medical-datasets/projects/eeg-seizure-zero-shot/scripts/evaluate_cross_patient.py", line 85, in <module>
+    main()
+  File "/home/hatch/workspace/medical-datasets/projects/eeg-seizure-zero-shot/scripts/evaluate_cross_patient.py", line 71, in main
+    datasets[patient_id] = load_patient(patient_path, summary_path, args.window_s)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/medical-datasets/projects/eeg-seizure-zero-shot/scripts/evaluate_cross_patient.py", line 42, in load_patient
+    raw = load_edf(edf_path, expected_channels=meta["channels"])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/medical-datasets/projects/eeg-seizure-zero-shot/src/loading.py", line 68, in load_edf
+    raise ValueError(f"{edf_path.name}: missing channels vs summary: {missing}")
+ValueError: chb01_03.edf: missing channels vs summary: ['T8-P8', 'T8-P8']

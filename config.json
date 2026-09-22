@@ -1,0 +1,1 @@
+{"notes":"Add more patients by downloading their summary + EDF files and appending entries here.","patients":{"chb01":{"files_dir":"chb01","summary":"chb01/chb01-summary.txt"},"chb02":{"files_dir":"chb02","summary":"chb02/chb02-summary.txt"}}}
