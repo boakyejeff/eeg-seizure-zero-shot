@@ -1,0 +1,28 @@
+{
+  "chb01": {
+    "auc": 0.9543272228457413,
+    "sensitivity": 0.7777777777777778,
+    "specificity": 0.9668911335578002,
+    "false_alarms_per_hour": 29.5,
+    "n_windows": 1800,
+    "n_seizure_windows": 18,
+    "recording_hours": 2.0,
+    "threshold": 0.5,
+    "trained_on": [
+      "chb02"
+    ]
+  },
+  "chb02": {
+    "auc": 0.8861948449104413,
+    "sensitivity": 0.9047619047619048,
+    "specificity": 0.6422018348623854,
+    "false_alarms_per_hour": 293.72384937238496,
+    "n_windows": 239,
+    "n_seizure_windows": 21,
+    "recording_hours": 0.26555555555555554,
+    "threshold": 0.5,
+    "trained_on": [
+      "chb01"
+    ]
+  }
+}

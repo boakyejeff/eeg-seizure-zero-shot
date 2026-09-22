@@ -10,9 +10,9 @@ patient chb02
 leave-one-patient-out evaluation:
 held-out         AUC    sens    spec      FA/h
 ----------------------------------------------
-chb01          0.954   0.778   0.967     29.50
+chb01          0.756   0.056   1.000      0.00
   trained_on=['chb02'] n=1800 seizure_windows=18 hours=2.00
-chb02          0.886   0.905   0.642    293.72
+chb02          0.981   0.571   1.000      0.00
   trained_on=['chb01'] n=239 seizure_windows=21 hours=0.27
 
-saved -> results/cross_patient_results.json
+saved -> results/cross_patient_results_rf.json

@@ -56,17 +56,18 @@ def read_seizure_annotations(seizures_path: str | Path) -> list[tuple[float, flo
 def load_edf(edf_path: str | Path, expected_channels: list[str] | None = None) -> mne.io.Raw:
     """Load a CHB-MIT EDF file with MNE, preloading into memory.
 
-    If expected_channels is given (from the summary file), verify the
-    EDF channel set matches; channel order follows the EDF file itself.
+    Channel order follows the EDF file itself (consistent across files of
+    one patient). Note: the summary may list a bipolar label twice
+    (e.g. T8-P8), in which case MNE deduplicates them as T8-P8-0/T8-P8-1 —
+    so we validate the channel *count*, not the exact names.
     """
     edf_path = Path(edf_path)
     raw = mne.io.read_raw_edf(edf_path, preload=True, verbose="ERROR")
-    if expected_channels is not None:
-        edf_names = set(raw.ch_names)
-        missing = [c for c in expected_channels if c not in edf_names]
-        if missing:
-            raise ValueError(f"{edf_path.name}: missing channels vs summary: {missing}")
-        raw.pick_channels(expected_channels, verbose="ERROR")
+    if expected_channels is not None and len(raw.ch_names) != len(expected_channels):
+        raise ValueError(
+            f"{edf_path.name}: {len(raw.ch_names)} EDF channels vs "
+            f"{len(expected_channels)} in summary"
+        )
     return raw
 
 
