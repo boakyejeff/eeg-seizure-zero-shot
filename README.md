@@ -1,5 +1,6 @@
 # EEG Seizure Detection, Zero-Shot Across Patients
 
+![Project cover](assets/cover.png)
 Cross-patient (zero-shot) seizure detection on the **CHB-MIT scalp EEG
 database**: train a classifier on one patient's EEG and evaluate it on a
 **held-out patient's** EEG — no patient-specific tuning allowed.
